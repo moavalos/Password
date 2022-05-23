@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Password {
 
-	private Integer longitud;
-	private final static Integer LONGITUD = 10;
+	// private Integer longitud;
+	private static Integer longitud;
 	private String contrasena;
 
 	public Password() {
@@ -17,9 +17,11 @@ public class Password {
 		this.contrasena = generarPassword();
 	}
 
-	public boolean esFuerte() {
-		// devuelve un booleano si es fuerte o no, para que sea fuerte debe tener mas de
-		// 2 mayúsculas, mas de 1 minúscula y mas de 5 números.
+	public String esFuerte() {
+		/*
+		 * devuelve un booleano si es fuerte o no, para que sea fuerte debe tener mas de
+		 * 2 mayúsculas, mas de 1 minúscula y mas de 5 números.
+		 */
 		Integer numeros = 0;
 		Integer minusculas = 0;
 		Integer mayusculas = 0;
@@ -33,23 +35,25 @@ public class Password {
 				} else {
 					numeros += 1;
 				}
-
 			}
-
 		}
 		if (numeros >= 5 && minusculas >= 1 && mayusculas >= 2) {
-			return true;
+			String positivo = " strong password";
+			return positivo;
 		} else {
-			return false;
+			String negativo = " weak password";
+			return negativo;
 		}
 	}
 
 	public String generarPassword() {
 		// genera la contraseña del objeto con la longitud que tenga.
 		String password = "";
-		for (int i = 0; i < LONGITUD; i++) {
-			// aca se genera un numero aleatorio, elige si añadir una minuscula,mayuscula o
-			// numero
+		for (int i = 0; i < longitud; i++) {
+			/*
+			 * aca se genera un numero aleatorio, elige si añadir una minuscula,mayuscula o
+			 * numero
+			 */
 			Integer eleccion = ((int) Math.floor(Math.random() * 3 + 1));
 
 			if (eleccion == 1) {
