@@ -7,6 +7,7 @@ public class Password {
 	// private Integer longitud;
 	private static Integer longitud;
 	private String contrasena;
+	// private String password;
 
 	public Password() {
 
@@ -15,35 +16,6 @@ public class Password {
 	public Password(Integer longitud) {
 		this.longitud = longitud;
 		this.contrasena = generarPassword();
-	}
-
-	public String esFuerte() {
-		/*
-		 * devuelve un booleano si es fuerte o no, para que sea fuerte debe tener mas de
-		 * 2 mayúsculas, mas de 1 minúscula y mas de 5 números.
-		 */
-		Integer numeros = 0;
-		Integer minusculas = 0;
-		Integer mayusculas = 0;
-
-		for (int i = 0; i < contrasena.length(); i++) {
-			if (contrasena.charAt(i) >= 97 && contrasena.charAt(i) <= 122) {
-				minusculas += 1;
-			} else {
-				if (contrasena.charAt(i) >= 65 && contrasena.charAt(i) <= 90) {
-					mayusculas += 1;
-				} else {
-					numeros += 1;
-				}
-			}
-		}
-		if (numeros >= 5 && minusculas >= 1 && mayusculas >= 2) {
-			String positivo = " strong password";
-			return positivo;
-		} else {
-			String negativo = " weak password";
-			return negativo;
-		}
 	}
 
 	public String generarPassword() {
@@ -71,6 +43,36 @@ public class Password {
 		}
 		return password;
 
+	}
+
+	public String esFuerte() {
+		/*
+		 * devuelve un booleano si es fuerte o no, para que sea fuerte debe tener mas de
+		 * 2 mayúsculas, mas de 1 minúscula y mas de 5 números.
+		 */
+		Integer numeros = 0;
+		Integer minusculas = 0;
+		Integer mayusculas = 0;
+
+		for (int i = 0; i < contrasena.length(); i++) {
+			if (contrasena.charAt(i) >= 97 && contrasena.charAt(i) <= 122) {
+				minusculas += 1;
+			} else {
+				if (contrasena.charAt(i) >= 65 && contrasena.charAt(i) <= 90) {
+					mayusculas += 1;
+				} else {
+					numeros += 1;
+				}
+			}
+		}
+		// return contrasena;
+		if (numeros >= 5 && minusculas >= 1 && mayusculas >= 2) {
+			String positivo = " strong password";
+			return positivo;
+		} else {
+			String negativo = " weak password";
+			return negativo;
+		}
 	}
 
 	public Integer getLongitud() {
