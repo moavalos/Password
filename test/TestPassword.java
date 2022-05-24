@@ -23,6 +23,9 @@ public class TestPassword {
 			password[i] = new Password(longitud);
 			contraFuerte[i] = password[i].generarPassword();
 			System.out.println(password[i].getContrasena() + password[i].esFuerte());
+			
+			/* hay un 70% de posibilidades de q tire contraseña segura si la longitud es mayor a 8, 
+			 * mientras mas larga sea la longitud de la contraseña mejor.*/
 	
 		}
 
