@@ -9,14 +9,17 @@ public class Password {
 	private String contrasena;
 	// private String password;
 
-	public Password() {
-
-	}
-
 	public Password(Integer longitud) {
 		this.longitud = longitud;
 		this.contrasena = generarPassword();
 	}
+
+//	public Integer longitudMayorQue8() {
+//		if (this.longitud >= 8 && getLongitud() >= 8) {
+//			
+//		}
+//		return longitud;
+//	}
 
 	public String generarPassword() {
 		// genera la contraseña del objeto con la longitud que tenga.
@@ -76,6 +79,7 @@ public class Password {
 	}
 
 	public Integer getLongitud() {
+		if (this.longitud >= 8);
 		return longitud;
 	}
 

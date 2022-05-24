@@ -1,8 +1,21 @@
+import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.Scanner;
+
+import org.junit.jupiter.api.Test;
 
 import dominio.Password;
 
 public class TestPassword {
+	
+	@Test
+	public void queLaLongitudDeLaContraseñaSeaMayorQueOcho() {
+		Integer longitud = 9;
+		Password contra = new Password(longitud);
+		//contra.longitudMayorQue8();
+		assertEquals(longitud, contra.getLongitud());
+	}
 	
 	public static void main(String[] args) {
 
