@@ -1,25 +1,17 @@
 package dominio;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Password {
 
-	// private Integer longitud;
-	private static Integer longitud;
+	private Integer longitud;
 	private String contrasena;
-	// private String password;
 
 	public Password(Integer longitud) {
 		this.longitud = longitud;
 		this.contrasena = generarPassword();
 	}
-
-//	public Integer longitudMayorQue8() {
-//		if (this.longitud >= 8 && getLongitud() >= 8) {
-//			
-//		}
-//		return longitud;
-//	}
 
 	public String generarPassword() {
 		// genera la contraseña del objeto con la longitud que tenga.
@@ -79,16 +71,29 @@ public class Password {
 	}
 
 	public Integer getLongitud() {
-		if (this.longitud >= 8);
+		if (this.longitud >= 8)
+			;
 		return longitud;
 	}
 
-	public void setLongitud(int longitud) {
+	public void setLongitud(Integer longitud) {
 		this.longitud = longitud;
 	}
 
 	public String getContrasena() {
 		return contrasena;
+	}
+
+	public Boolean mayorQueOcho(Integer longitud2) {
+		// ArrayList<Password> contra = new ArrayList<>();
+		Boolean si = false;
+		for (int i = 0; i < this.longitud; i++) {
+			if (this.longitud >= 8) {
+				si = true;
+			}
+		}
+		return si;
+
 	}
 
 }
